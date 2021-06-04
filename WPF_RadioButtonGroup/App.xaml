@@ -1,0 +1,19 @@
+﻿<Application x:Class="WPF_RadioButtonGroup.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WPF_RadioButtonGroup"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <!-- If you'd like a RadioButton to become checked when it gets
+         keyboard focus, this is what you might considering doing. -->
+        <Style TargetType="RadioButton">
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="true">
+                    <Setter Property="IsChecked" Value="True" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </Application.Resources>
+</Application>
