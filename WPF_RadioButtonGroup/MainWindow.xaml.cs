@@ -25,6 +25,11 @@ namespace WPF_RadioButtonGroup
         {
             InitializeComponent();
         }
+
+        private void AccessibleStackPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 
     // Create a StackPanel with a custom AutomationPeer, in order for 

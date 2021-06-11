@@ -30,11 +30,11 @@
 
             <!-- Of course, all visual and programmatic labels would be localized 
                  in a shipping app. -->
-            <TextBlock Name="RGBLabelTowhees" Text="Do you like finches?" />
+            <!--<TextBlock Name="RGBLabelTowhees" Text="Do you like finches?" />
             <local:AccessibleStackPanel 
                 AutomationProperties.LabeledBy="{Binding ElementName=RGBLabelTowhees}"
                 KeyboardNavigation.TabNavigation="Once"
-                KeyboardNavigation.DirectionalNavigation="Cycle">
+                KeyboardNavigation.DirectionalNavigation="Contained">
                 <RadioButton Name="rb1">Yes</RadioButton>
                 <RadioButton Name="rb2">No</RadioButton>
                 <RadioButton Name="rb3">No opinion</RadioButton>
@@ -47,7 +47,7 @@
                 KeyboardNavigation.DirectionalNavigation="Cycle">
                 <RadioButton GroupName="colorgrp">Red</RadioButton>
                 <RadioButton GroupName="colorgrp">Blue</RadioButton>
-            </local:AccessibleStackPanel>
+            </local:AccessibleStackPanel>-->
 
             <TextBlock Name="RGBLabelNumber" Text="Preferred number of finches" Margin="0 20 0 0" />
             <local:AccessibleStackPanel
@@ -56,6 +56,34 @@
                 KeyboardNavigation.DirectionalNavigation="Cycle">
                 <RadioButton GroupName="numgrp">1</RadioButton>
                 <RadioButton GroupName="numgrp">2</RadioButton>
+            </local:AccessibleStackPanel>
+
+            <TextBlock Name="RGBLabelEndDate" Text="End date:" Margin="0 20 0 0" />
+            <local:AccessibleStackPanel
+                AutomationProperties.LabeledBy="{Binding ElementName=RGBLabelEndDate}"
+                KeyboardNavigation.TabNavigation="Once"
+                KeyboardNavigation.DirectionalNavigation="Cycle">
+                
+                <!-- Putting the first RadioButton in its own StackPanel
+                    didn't to achieve anything useful. -->
+                <RadioButton GroupName="enddategroup">No end date</RadioButton>
+                
+                <StackPanel Orientation="Horizontal" Margin="0 4 0 4"
+                    KeyboardNavigation.TabNavigation="Local">
+                    <RadioButton Name="RBEndDateaEndAfter" GroupName="enddategroup">End after:</RadioButton>
+                    <TextBox Width="100" Margin="10 0 10 0" 
+                        AutomationProperties.LabeledBy="{Binding ElementName=RBEndDateaEndAfter}"
+                        IsEnabled="{Binding ElementName=RBEndDateaEndAfter, Path=IsChecked}" />
+                    <TextBlock Text="occurrences" />
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal"
+                    KeyboardNavigation.TabNavigation="Local">
+                    <RadioButton Name="RBEndDateaEndBy" GroupName="enddategroup">End by date:</RadioButton>
+                    <TextBox Width="100" Margin="10 0 10 0" 
+                        AutomationProperties.LabeledBy="{Binding ElementName=RBEndDateaEndBy}"
+                        IsEnabled="{Binding ElementName=RBEndDateaEndBy, Path=IsChecked}" />
+                </StackPanel>
             </local:AccessibleStackPanel>
 
         </StackPanel>

@@ -7,13 +7,13 @@
 
         <!-- If you'd like a RadioButton to become checked when it gets
          keyboard focus, this is what you might considering doing. -->
-        <Style TargetType="RadioButton">
+        <!--<Style TargetType="RadioButton">
             <Style.Triggers>
                 <Trigger Property="IsFocused" Value="true">
                     <Setter Property="IsChecked" Value="True" />
                 </Trigger>
             </Style.Triggers>
-        </Style>
+        </Style>-->
         
     </Application.Resources>
 </Application>
